@@ -5,7 +5,6 @@ import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 import {Liga} from '../../models/leagues.interface';
 import { Router } from '@angular/router';
-import { EliminarComponent } from 'src/app/dialogo/eliminar/eliminar.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({

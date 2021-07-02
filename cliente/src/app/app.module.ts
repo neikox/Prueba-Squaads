@@ -6,7 +6,6 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
-import { PieComponent } from './componentes/pie/pie.component';
 import { MatSortModule } from '@angular/material/sort';
 import { FichaComponent } from './componentes/ficha/ficha.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +21,6 @@ import { registerLocaleData } from '@angular/common';
 import localefr from '@angular/common/locales/fr';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list'; 
-import { EliminarComponent } from './dialogo/eliminar/eliminar.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { EquiposComponent } from './equipos/equipos.component';
 registerLocaleData(localefr, "fr");
@@ -31,11 +29,9 @@ registerLocaleData(localefr, "fr");
   declarations: [
     AppComponent,
     EncabezadoComponent,
-    PieComponent,
     FichaComponent,
     CuerpoComponent,
     AceptarComponent,
-    EliminarComponent,
     EquiposComponent
   ],
   imports: [
