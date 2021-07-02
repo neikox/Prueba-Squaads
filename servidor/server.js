@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const inicial = require("./app/routes/leagues.routes");
+const teams = require("./app/routes/teams.routes");
 
 const app = express();
 
@@ -30,6 +31,7 @@ db.mongoose
         process.exit();
     })
 app.use('/', inicial);
+app.use('/teams', teams);
 
 const PORT = process.env.PORT || 8060;
 app.listen(PORT, () => {

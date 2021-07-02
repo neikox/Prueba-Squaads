@@ -1,118 +1,88 @@
 .mat-grid-tile {
     border: solid 2px rgb(79, 78, 161);
 }
-.titulos1 {
-    font-weight: bold;
-    width: 100px;
-}
 h1 {
   margin-left: 2vh;
 }
-.foto {
-    width: 80px;
-    height: auto;
-    filter: drop-shadow(0 0 4px black);
-}
-.columna1 {
-    width: 100px;
-}
-
 .tabla {
     width: 100%;
   }
   
-  .mat-row .mat-cell {
-    border-bottom: 1px solid transparent;
-    border-top: 1px solid transparent;
-    height: 9vh;
-    cursor: pointer;
-  }
-  .mat-cell {
-    width: 3vw;
-    text-align: center;
-  }
-  .mat-row:hover .mat-cell {
-    border-color: currentColor;
-    background-color: rgba(255, 0, 0, 0.678);
-    color: white;
-  }
-  
-  .demo-row-is-clicked {
-    font-weight: bold;
-  }
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  height: 9vh;
+  cursor: pointer;
+}
+.mat-cell{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+  background-color: #378b7560;
+  color: white;
+}
 
-  .mat-column-foto {
-    flex: 0 0 10%;
-    width: 10%;
-  }
+.demo-row-is-clicked {
+  font-weight: bold;
+}
 
-  .mat-column-id {
-    flex: 0 0 10%;
-    width: 5%;
-  }
+.mat-column-NombreLiga {
+  flex: 0 0 60%;
+}
 
-  .mat-column-descripcion {
-    flex: 0 0 35%;
-    width: 40%;
-  }
+.mat-column-LogoLiga {
+  flex: 0 0 37.45%;
+}
 
-  .mat-column-precio {
-    flex: 0 0 10%;
-    width: 10%;
-  }
+.logo {
+  display: flex;
+  justify-content: inherit;
+  padding-left: 5vh;
+}
 
-  .mat-row {
-    height: 90px;
-    min-height: 90px;
-  }
-  
-  
-  mat-cell {
-    padding-left: 10px;
-  }
+img {
+  width: 8vh;
+}
 
-  mat-header-cell {
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-    background-color: rgb(191, 191, 199);
-  }
-  
-  .texto {
-    display: flex;
-    justify-content: center;
-  }
+.mat-row {
+  height: 90px;
+  min-height: 90px;
+}
 
-  @media (max-width: 900px) {
-    .mat-column-stock, .mat-column-familia {
-      display: none;
-    }
-    .mat-column-foto {
-      flex: inherit;
-      width: 100%;
-    }
+mat-header-cell {
+  font-weight: bold;
+  background-color: rgb(191, 191, 199);
+}
 
-    .mat-column-id {
-      flex: inherit;
-      width: 100%;
-      font-size: 12px;
-    }
-    .mat-column-descripcion {
-      flex: inherit;
-      width: 100%;
-      font-size: 12px;
-    }
-    .mat-column-precio {
-      flex: inherit;
-      width: 100%;
-      font-size: 12px;
-    }
-    .mat-sort-header {
-      flex: inherit;
-      width: 100%;
-      font-size: 12px;
-    }
-    .foto {
-      width: 7vh;
-    }
+.texto {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+
+  .mat-column-NombreEquipo {
+    flex: inherit;
+    width: 100%;
+    font-size: 12px;
   }
+  .mat-column-LogoEquipo {
+    flex: inherit;
+    width: 100%;
+    font-size: 12px;
+  }
+  .mat-sort-header {
+    flex: inherit;
+    width: 100%;
+    font-size: 12px;
+  }
+  .foto {
+    width: 7vh;
+  }
+  mat-header-row *{
+    padding-left: 17vh;
+  }
+}

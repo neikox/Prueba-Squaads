@@ -1,0 +1,109 @@
+.mat-grid-tile {
+    border: solid 2px rgb(79, 78, 161);
+}
+h1 {
+  margin-left: 2vh;
+}
+
+  /* background-color: #378B74; */
+img {
+  width: 8vh;
+}
+.ingresar {
+  margin-left: 2vh;
+}
+.tabla {
+    width: 100%;
+  }
+  
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  height: 9vh;
+}
+.mat-cell{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+  background-color: #378b7560;
+  color: white;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}
+
+.mat-column-NombreEquipo {
+  flex: 0 0 45%;
+}
+
+.mat-column-LogoEquipo {
+  flex: 0 0 5%;
+}
+
+.mat-column-acciones {
+  display: flex;
+  justify-content: center;
+}
+
+.mat-row {
+  height: 90px;
+  min-height: 90px;
+}
+
+
+mat-cell {
+  padding-left: 10px;
+}
+
+mat-header-cell {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  background-color: rgb(191, 191, 199);
+}
+
+.texto {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .mat-row {
+    height: 130px;
+  }
+  .mat-column-NombreEquipo {
+    flex: inherit;
+    width: 100%;
+    font-size: 12px;
+  }
+  .mat-column-LogoEquipo {
+    flex: inherit;
+    width: 100%;
+    font-size: 12px;
+  }
+  .mat-column-acciones {
+    flex: inherit;
+    width: 100%;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  button {
+    height: 4.5vh;
+  }
+  mat-icon {
+    font-size: 18px;
+  }
+  .mat-sort-header {
+    flex: inherit;
+    width: 100%;
+    font-size: 12px;
+  }
+  .foto {
+    width: 7vh;
+  }
+}

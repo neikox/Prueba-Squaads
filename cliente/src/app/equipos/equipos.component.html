@@ -1,23 +1,27 @@
+<app-encabezado></app-encabezado>
 <div>
-    <h1>Listado de liga</h1>
-    <button mat-stroked-button matTooltip="Click para Ingresar nuevo" class="iconbutton" color="warn" (click)="onRowClicked(0)">
+    <h1>Listado de Equipos</h1>
+    <button mat-stroked-button matTooltip="Click para Ingresar nuevo" class="iconbutton ingresar" color="warn" (click)="onRowClicked(0)">
       <mat-icon aria-hidden="false" aria-label="Nuevo Registro">library_add</mat-icon>
     </button>
     <div class="mat-elevation-z8 ">
       <table mat-table matSort [dataSource]="dataSource" class="tabla">          
-          <ng-container matColumnDef="NombreLiga">
-            <mat-header-cell *matHeaderCellDef mat-sort-header class="texto"> Nombre</mat-header-cell>
+          <ng-container matColumnDef="NombreEquipo">
+            <mat-header-cell *matHeaderCellDef mat-sort-header class="texto">Nombre</mat-header-cell>
             <mat-cell *matCellDef="let team" class="texto">{{team.NombreEquipo}}</mat-cell>
           </ng-container>
           
-          <ng-container matColumnDef="LogoLiga">
-            <mat-header-cell *matHeaderCellDef mat-sort-header class="texto"> Logo </mat-header-cell>
+          <ng-container matColumnDef="LogoEquipo">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Logo </mat-header-cell>
             <img mat-card-image *matCellDef="let team" src="{{team.LogoEquipo}}">
           </ng-container>
 
           <ng-container matColumnDef="acciones">
             <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
             <mat-cell *matCellDef="let team">
+              <button mat-stroked-button matTooltip="Click para Ver" class="iconbutton" color="warn" (click)="openDialog(team)">
+                <mat-icon aria-hidden="false" aria-label="Ver jugadores">visibility</mat-icon>
+              </button>
               <button mat-stroked-button matTooltip="Click para Delete" class="iconbutton" color="warn" (click)="openDialog(team)">
                 <mat-icon aria-hidden="false" aria-label="Eliminar Registro">delete</mat-icon>
               </button>

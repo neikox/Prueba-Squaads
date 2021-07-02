@@ -44,11 +44,4 @@ export class CuerpoComponent implements OnInit {
     console.log('Row clicked: ',row);
       this.router.navigateByUrl('/teams/'+row.Identificador);
   }
-
-  // openDialog(dato: any){
-  //   this.httpClient.get('http://localhost:8060/borrar/'+dato._id).subscribe((articulo: any) => {
-  //       console.log("dale ahi");
-  //   });
-  //   window.location.reload();
-  // }
 }

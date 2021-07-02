@@ -1,15 +1,16 @@
+<app-encabezado></app-encabezado>
 <div>
-    <h1>Listado de liga</h1>
+    <h1>Listado de Ligas</h1>
 
     <div class="mat-elevation-z8 ">
       <table mat-table matSort [dataSource]="dataSource" class="tabla">          
           <ng-container matColumnDef="NombreLiga">
-            <mat-header-cell *matHeaderCellDef mat-sort-header class="texto"> Nombre</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header class="texto">Nombre</mat-header-cell>
             <mat-cell *matCellDef="let liga" class="texto"> {{liga.NombreLiga}} </mat-cell>
           </ng-container>
     
           <ng-container matColumnDef="LogoLiga">
-            <mat-header-cell *matHeaderCellDef mat-sort-header class="texto"> Logo </mat-header-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header class="logo"> Logo </mat-header-cell>
             <img mat-card-image *matCellDef="let liga" src="{{liga.LogoLiga}}">
           </ng-container>
     

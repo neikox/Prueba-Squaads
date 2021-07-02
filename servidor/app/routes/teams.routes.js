@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-const leagues = require("../controllers/teams.controller");
+const teams = require("../controllers/teams.controller");
 
 router.get("/", teams.list);
 

@@ -6,7 +6,8 @@ var teamsController = {};
 
 teamsController.list = (req,res) => {
     console.log("Entre en los equipos");
-    Team.find({Liga: req.params.Identificador}).exec((err,teams) => {
+    console.log(req.params);
+    Team.find({Liga: req.params.liga}).exec((err,teams) => {
         if(err) {
             console.log("Error:",err);
             return;
@@ -31,12 +32,10 @@ teamsController.update = (req, res) => {
         factura = true;
     }
     Team.findByIdAndUpdate(req.params.id, {$set: {
-        tecnico: req.body.tecnico,
-        fecha: req.body.fecha,
-        cliente: req.body.cliente,
-        descripcion: req.body.descripcion,
-        facturable: factura,
-        importe: req.body.importe
+        NombreEquipo: req.body.NombreEquipo,
+        id: req.body.id,
+        LogoEquipo: req.body.LogoEquipo,
+        Liga: req.body.Liga
     }},{new:false,runValidators:true},
     (err, articulo) => {
         if(err) {
@@ -54,9 +53,7 @@ teamsController.create = function(req,res) {
     Team.find({}).sort({_id:-1}).limit(1).exec(function(err,nuevoArticulo){
         
         if(err) {console.log('Error:',err);return;}
-        nuevoArticulo[0].fecha = nuevoArticulo[0].descripcion = nuevoArticulo[0].cliente = '' ;
-        nuevoArticulo[0].importe = 0;
-        nuevoArticulo[0].facturable = false;
+        nuevoArticulo[0].NombreEquipo = nuevoArticulo[0].id = nuevoArticulo[0].LogoEquipo = nuevoArticulo[0].Liga = '' ;
 
         res.send(nuevoArticulo);
     });
@@ -64,18 +61,12 @@ teamsController.create = function(req,res) {
 
 teamsController.grabar = function(req,res) {
     console.log("entrando al grabar");
-    let factura = false;
-    if(req.body.importe != 0) {
-        factura = true;
-    }
     var tarea = new Team({
         _id: new mongoose.Types.ObjectId(),
-        tecnico: req.body.tecnico,
-        fecha: req.body.fecha,
-        cliente: req.body.cliente,
-        descripcion: req.body.descripcion,
-        facturable: factura,
-        importe: req.body.importe
+        NombreEquipo: req.body.NombreEquipo,
+        id: req.body.id,
+        LogoEquipo: req.body.LogoEquipo,
+        Liga: req.body.Liga
     });
     tarea.save(function(err) {
         if (err){

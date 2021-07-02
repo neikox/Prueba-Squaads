@@ -24,7 +24,7 @@ export class EquiposComponent implements OnInit {
       this.dataSource.sort = sorter;
     }
   }
-  displayedColumns: string[] = ['NombreEquipo', 'LogoEquipo'];
+  displayedColumns: string[] = ['NombreEquipo', 'LogoEquipo', 'acciones'];
   dataSource = new MatTableDataSource<Team>();
 
   constructor(private httpClient: HttpClient, private router: Router,private dialog: MatDialog) { }

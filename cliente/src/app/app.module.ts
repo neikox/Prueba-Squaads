@@ -23,6 +23,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list'; 
 import {MatRadioModule} from '@angular/material/radio';
 import { EquiposComponent } from './equipos/equipos.component';
+import { InicioComponent } from './componentes/inicio/inicio.component';
 registerLocaleData(localefr, "fr");
 
 @NgModule({
@@ -32,7 +33,8 @@ registerLocaleData(localefr, "fr");
     FichaComponent,
     CuerpoComponent,
     AceptarComponent,
-    EquiposComponent
+    EquiposComponent,
+    InicioComponent
   ],
   imports: [
     MatRadioModule,
