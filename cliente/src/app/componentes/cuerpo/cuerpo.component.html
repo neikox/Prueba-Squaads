@@ -1,0 +1,20 @@
+<div>
+    <h1>Listado de liga</h1>
+
+    <div class="mat-elevation-z8 ">
+      <table mat-table matSort [dataSource]="dataSource" class="tabla">          
+          <ng-container matColumnDef="NombreLiga">
+            <mat-header-cell *matHeaderCellDef mat-sort-header class="texto"> Nombre</mat-header-cell>
+            <mat-cell *matCellDef="let liga" class="texto"> {{liga.NombreLiga}} </mat-cell>
+          </ng-container>
+    
+          <ng-container matColumnDef="LogoLiga">
+            <mat-header-cell *matHeaderCellDef mat-sort-header class="texto"> Logo </mat-header-cell>
+            <img mat-card-image *matCellDef="let liga" src="{{liga.LogoLiga}}">
+          </ng-container>
+    
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;" (click) = "onRowClicked(row)"></mat-row>
+      </table> 
+        <mat-paginator #paginator [pageIndex]="0" [pageSize]="5" [pageSizeOptions]="[5, 10]" showFirstLastButtons></mat-paginator>
+    </div>  

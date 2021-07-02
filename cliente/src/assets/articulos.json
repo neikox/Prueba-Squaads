@@ -1,0 +1,175 @@
+{ "articulos": 
+[
+    {
+    "id" : 1,
+    "descripcion" : "aretes largos",
+    "familia" : "complementos",
+    "impuesto" : 7,
+    "precio" : 6.7,
+    "stock" : 82
+}
+
+,
+{
+    "id" : 2.0,
+    "descripcion" : "bolso de piel",
+    "familia" : "complementos",
+    "impuesto" : 7.0,
+    "precio" : 15.0,
+    "stock" : 134.0
+}
+
+,
+{
+    "id" : 3.0,
+    "descripcion" : "collar de cuentas",
+    "familia" : "complementos",
+    "impuesto" : 7.0,
+    "precio" : 2.2,
+    "stock" : 50.0
+}
+
+,
+{
+    "id" : 4.0,
+    "descripcion" : "Vestido corto floral",
+    "familia" : "vestidos",
+    "impuesto" : 7.0,
+    "precio" : 15.4,
+    "stock" : 80.0
+}
+
+,
+{
+    "id" : 5.0,
+    "descripcion" : "vestido largo",
+    "familia" : "vestidos",
+    "impuesto" : 7.0,
+    "precio" : 20.6,
+    "stock" : 255.0
+}
+
+,
+{
+    "id" : 6.0,
+    "descripcion" : "vestido vaquero",
+    "familia" : "vestidos",
+    "impuesto" : 7.0,
+    "precio" : 21.99,
+    "stock" : 250.0
+}
+
+,
+{
+    "id" : 7.0,
+    "descripcion" : "zandalias",
+    "familia" : "zapatos",
+    "impuesto" : 7.0,
+    "precio" : 12.5,
+    "stock" : 360.0
+}
+
+,
+{
+    "id" : 8.0,
+    "descripcion" : "zapatilla blanca",
+    "familia" : "zapatos",
+    "impuesto" : 7.0,
+    "precio" : 17.85,
+    "stock" : 360.0
+}
+
+,
+{
+    "id" : 9,
+    "descripcion" : "zapatilla roja",
+    "familia" : "zapatos",
+    "impuesto" : 7,
+    "precio" : 10.99,
+    "stock" : 360
+}
+
+,
+{
+    "id" : 10,
+    "descripcion" : "deportivo blanco",
+    "familia" : "zapatos",
+    "impuesto" : 7,
+    "precio" : 9.8,
+    "stock" : 360
+}
+
+,
+{
+    "id" : 11,
+    "descripcion" : "sudadera rosa",
+    "familia" : "camisas",
+    "impuesto" : 7,
+    "precio" : 25.99,
+    "stock" : 120
+}
+
+,
+{
+    "id" : 12,
+    "descripcion" : "sueter rayas",
+    "familia" : "camisas",
+    "impuesto" : 7,
+    "precio" : 7.99,
+    "stock" : 210
+}
+
+,
+{
+    "id" : 13,
+    "descripcion" : "camisa de mujer",
+    "familia" : "camisas",
+    "impuesto" : 7,
+    "precio" : 25,
+    "stock" : 5
+}
+
+,
+{
+    "id" : 14,
+    "descripcion" : "Reloj deportivo",
+    "familia" : "complementos",
+    "impuesto" : 7,
+    "precio" : 23,
+    "stock" : 60,
+    "__v" : 0
+}
+
+,
+{
+    "id" : 15,
+    "descripcion" : "camisetote",
+    "familia" : "camisas",
+    "impuesto" : 7,
+    "precio" : 28,
+    "stock" : 8,
+    "__v" : 0
+}
+
+,
+{
+    "id" : 16,
+    "descripcion" : "bew",
+    "familia" : "pantalones po$$e",
+    "impuesto" : 7,
+    "precio" : 25,
+    "stock" : 50,
+    "__v" : 0
+}
+
+,
+{
+    "id" : 17,
+    "descripcion" : "asdfa",
+    "familia" : "pantalones po$$e",
+    "impuesto" : 7,
+    "precio" : 50,
+    "stock" : 25,
+    "__v" : 0
+}
+]}

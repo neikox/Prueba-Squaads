@@ -1,0 +1,42 @@
+<form id="grupo" [formGroup]="form" (ngSubmit)="guardar($event)">
+  <div class="contenedor">
+    <div id="formulario">
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>ID:</mat-label>
+        <input type="text" matInput [readonly]="true" placeholder="123..." formControlName="_id">
+        <mat-error *ngIf="form.get('_id')?.errors?.required">{{getErrorMessage()}}</mat-error>
+      </mat-form-field> -->
+      <mat-form-field appearance="fill">
+        <mat-label>Tecnico:</mat-label>
+        <input type="number" matInput [readonly]="false" placeholder="Collar ...." formControlName="tecnico" required>
+        <mat-error *ngIf="form.get('tecnico')?.errors?.required">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha:</mat-label>
+        <input type="text" matInput [readonly]="false" placeholder="Complementos....." formControlName="fecha" required>
+        <mat-error *ngIf="form.get('fecha')?.errors?.required">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Cliente:</mat-label>
+        <input type="text" matInput [readonly]="false" placeholder="0" formControlName="cliente" required>
+        <mat-error *ngIf="form.get('cliente')?.errors?.required">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Descripcion:</mat-label>
+        <input type="text" matInput [readonly]="false" placeholder="2.5" formControlName="descripcion" required>
+        <mat-error *ngIf="form.get('descripcion')?.errors?.required">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Importe:</mat-label>
+        <input type="number" matInput [readonly]="false" placeholder="..." formControlName="importe" required>
+        <mat-error *ngIf="form.get('importe')?.errors?.required">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <div id="botones">
+        <button type="reset">Cancelar</button>
+        <button type="submit">Guardar</button>
+      </div>
+    </div>
+  </div>
+  
+
+</form>

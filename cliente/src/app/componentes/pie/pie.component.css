@@ -1,0 +1,28 @@
+.footer {
+    background-color: red;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 3vh;
+    height: 9vh;
+}
+
+a,span {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+img {
+    margin: 0 2px;
+    filter: drop-shadow(0 0 2px black);
+}
+
+@media (max-width: 900px) {
+    a,span {
+        font-size: 12px;
+    }
+    img {
+        width: 5vh;
+    }
+}
