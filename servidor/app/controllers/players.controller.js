@@ -7,7 +7,7 @@ var playersController = {};
 playersController.list = (req,res) => {
     console.log("Entre en los jugadores");
     console.log(req.params);
-    Player.find({}).exec((err,players) => {
+    Player.find({teamId: req.params.teamId}).exec((err,players) => {
         if(err) {
             console.log("Error:",err);
             return;

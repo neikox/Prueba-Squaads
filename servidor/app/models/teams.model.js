@@ -3,7 +3,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var teams = new Schema({
-    _id: Number,
+    _id: mongoose.ObjectId,
     NombreEquipo: String,
     id: String,
     LogoEquipo: String,

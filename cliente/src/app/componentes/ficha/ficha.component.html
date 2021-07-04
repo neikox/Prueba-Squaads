@@ -1,31 +1,28 @@
+<app-encabezado></app-encabezado>
 <form id="grupo" [formGroup]="form" (ngSubmit)="guardar($event)">
   <div class="contenedor">
     <div id="formulario">
       <mat-form-field appearance="fill">
-        <mat-label>Tecnico:</mat-label>
-        <input type="number" matInput [readonly]="false" placeholder="" formControlName="tecnico" required>
-        <mat-error *ngIf="form.get('tecnico')?.errors?.required">{{getErrorMessage()}}</mat-error>
+        <mat-label>Nombre del Equipo:</mat-label>
+        <input type="text" matInput [readonly]="false" placeholder="" formControlName="NombreEquipo" required>
+        <mat-error *ngIf="form.get('NombreEquipo')?.errors?.required">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Fecha:</mat-label>
-        <input type="text" matInput [readonly]="false" placeholder="Complementos....." formControlName="fecha" required>
-        <mat-error *ngIf="form.get('fecha')?.errors?.required">{{getErrorMessage()}}</mat-error>
+        <mat-label>Logo del equipo:</mat-label>
+        <input type="url" matInput [readonly]="false" placeholder="https://robohash.org/autemvoluptatemdolorem.png?size=250x250&set=set1" formControlName="LogoEquipo" required>
+        <mat-error *ngIf="form.get('LogoEquipo')?.errors?.required">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Cliente:</mat-label>
-        <input type="text" matInput [readonly]="false" placeholder="0" formControlName="cliente" required>
-        <mat-error *ngIf="form.get('cliente')?.errors?.required">{{getErrorMessage()}}</mat-error>
+        <mat-label>Liga:</mat-label>
+        <input type="text" matInput [readonly]="false" placeholder="a249ed6a-ad8e-4692-9758-5d19454752f3" formControlName="Liga" required>
+        <mat-error *ngIf="form.get('Liga')?.errors?.required">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
       <mat-form-field appearance="fill">
-        <mat-label>Descripcion:</mat-label>
-        <input type="text" matInput [readonly]="false" placeholder="2.5" formControlName="descripcion" required>
-        <mat-error *ngIf="form.get('descripcion')?.errors?.required">{{getErrorMessage()}}</mat-error>
+        <mat-label>ID:</mat-label>
+        <input type="text" matInput [readonly]="false" placeholder="8154f4cb-246b-4bf9-bc64-51f8661b6781" formControlName="id" required>
+        <mat-error *ngIf="form.get('id')?.errors?.required">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Importe:</mat-label>
-        <input type="number" matInput [readonly]="false" placeholder="..." formControlName="importe" required>
-        <mat-error *ngIf="form.get('importe')?.errors?.required">{{getErrorMessage()}}</mat-error>
-      </mat-form-field>
+      
       <div id="botones">
         <button type="reset">Cancelar</button>
         <button type="submit">Guardar</button>

@@ -7,7 +7,7 @@ var teamsController = {};
 teamsController.list = (req,res) => {
     console.log("Entre en los equipos");
     console.log(req.params);
-    Team.find({}).exec((err,teams) => {
+    Team.find({Liga: req.params.Liga}).exec((err,teams) => {
         if(err) {
             console.log("Error:",err);
             return;

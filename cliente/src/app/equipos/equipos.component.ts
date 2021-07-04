@@ -4,7 +4,8 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 import {Team} from '../models/teams.interface';
-import { Router } from '@angular/router';
+// import {Liga} from '../models/leagues.interface';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -13,6 +14,10 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./equipos.component.css']
 })
 export class EquiposComponent implements OnInit {
+
+  liga: any
+
+
   @ViewChild('paginator') set paginator(pager:MatPaginator) {
     if(pager) {
     this.dataSource.paginator = pager;
@@ -27,10 +32,12 @@ export class EquiposComponent implements OnInit {
   displayedColumns: string[] = ['NombreEquipo', 'LogoEquipo', 'acciones'];
   dataSource = new MatTableDataSource<Team>();
 
-  constructor(private httpClient: HttpClient, private router: Router,private dialog: MatDialog) { }
+  constructor(private httpClient: HttpClient,private _Activatedroute:ActivatedRoute, private router: Router,private dialog: MatDialog) { 
+    this.liga = this._Activatedroute.snapshot.paramMap.get("Identificador");
+  }
 
   ngOnInit() {
-    this.httpClient.get('http://localhost:8060/teams/')
+    this.httpClient.get('http://localhost:8060/teams/'+this.liga)
     .subscribe((Equipos: any) => {
       this.dataSource.data = Equipos;
       console.log("Resultado:",this.dataSource.data);
@@ -39,7 +46,17 @@ export class EquiposComponent implements OnInit {
 
   onRowClicked(row: any) {
     console.log('Row clicked: ',row);
+    this.httpClient.get('http://localhost:8060/players/'+row.id).subscribe((articulo: any) => {
+    });
       this.router.navigateByUrl('/players/'+row.id);
+  }
+
+  modifyTeam(row: any) {
+    console.log('Row clicked: ',row);
+    this.httpClient.get('http://localhost:8060/teams/ficha/'+row._id).subscribe((articulo: any) => {
+        console.log("llego a ficha");
+    });
+      this.router.navigateByUrl('/teams/ficha/'+row._id);
   }
 
   openDialog(dato: any){

@@ -42,8 +42,7 @@ export class CuerpoComponent implements OnInit {
 
   onRowClicked(row: any) {
     console.log('Row clicked: ',row);
-    this.httpClient.get('http://localhost:8060/'+row.Identificador).subscribe((articulo: any) => {
-        console.log("dale ahi");
+    this.httpClient.get('http://localhost:8060/teams/'+row.Identificador).subscribe((articulo: any) => {
     });
     this.router.navigateByUrl('/teams/'+row.Identificador);
   }

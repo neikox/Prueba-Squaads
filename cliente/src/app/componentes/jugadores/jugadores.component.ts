@@ -4,7 +4,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 import {Player} from '../../models/players.interface';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -13,6 +13,8 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./jugadores.component.css']
 })
 export class JugadoresComponent implements OnInit {
+
+  equipo: any
 
   @ViewChild('paginator') set paginator(pager:MatPaginator) {
     if(pager) {
@@ -28,10 +30,12 @@ export class JugadoresComponent implements OnInit {
   displayedColumns: string[] = ['NombreJugador', 'Avatar', 'acciones'];
   dataSource = new MatTableDataSource<Player>();
 
-  constructor(private httpClient: HttpClient, private router: Router,private dialog: MatDialog) { }
+  constructor(private httpClient: HttpClient,private _Activatedroute:ActivatedRoute, private router: Router,private dialog: MatDialog) { 
+    this.equipo = this._Activatedroute.snapshot.paramMap.get("id");
+  }
 
   ngOnInit() {
-    this.httpClient.get('http://localhost:8060/Players/')
+    this.httpClient.get('http://localhost:8060/players/'+this.equipo)
     .subscribe((Jugadores: any) => {
       this.dataSource.data = Jugadores;
       console.log("Resultado:",this.dataSource.data);

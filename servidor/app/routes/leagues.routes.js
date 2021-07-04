@@ -4,4 +4,6 @@ const leagues = require("../controllers/leagues.controller");
 
 router.get("/", leagues.list);
 
+
+
 module.exports = router;
