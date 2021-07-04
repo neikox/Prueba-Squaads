@@ -3,16 +3,17 @@ import {HttpClient} from '@angular/common/http';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
-import {Team} from '../models/teams.interface';
+import {Player} from '../../models/players.interface';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-equipos',
-  templateUrl: './equipos.component.html',
-  styleUrls: ['./equipos.component.css']
+  selector: 'app-jugadores',
+  templateUrl: './jugadores.component.html',
+  styleUrls: ['./jugadores.component.css']
 })
-export class EquiposComponent implements OnInit {
+export class JugadoresComponent implements OnInit {
+
   @ViewChild('paginator') set paginator(pager:MatPaginator) {
     if(pager) {
     this.dataSource.paginator = pager;
@@ -24,15 +25,15 @@ export class EquiposComponent implements OnInit {
       this.dataSource.sort = sorter;
     }
   }
-  displayedColumns: string[] = ['NombreEquipo', 'LogoEquipo', 'acciones'];
-  dataSource = new MatTableDataSource<Team>();
+  displayedColumns: string[] = ['NombreJugador', 'Avatar', 'acciones'];
+  dataSource = new MatTableDataSource<Player>();
 
   constructor(private httpClient: HttpClient, private router: Router,private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.httpClient.get('http://localhost:8060/teams/')
-    .subscribe((Equipos: any) => {
-      this.dataSource.data = Equipos;
+    this.httpClient.get('http://localhost:8060/Players/')
+    .subscribe((Jugadores: any) => {
+      this.dataSource.data = Jugadores;
       console.log("Resultado:",this.dataSource.data);
     });
   }
@@ -50,3 +51,4 @@ export class EquiposComponent implements OnInit {
   }
 
 }
+

@@ -15,14 +15,4 @@ leaguesController.list = (req,res) => {
     })
 }
 
-leaguesController.show = (req,res) => {
-    Liga.findOne({_id: req.params.id}).exec((err,leagues) => {
-        if(err) {
-            console.log("Error:",err);
-            return;
-        }
-        res.send(leagues);
-    })
-}
-
 module.exports = leaguesController;

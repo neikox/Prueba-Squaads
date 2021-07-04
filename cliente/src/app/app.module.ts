@@ -24,6 +24,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import {MatRadioModule} from '@angular/material/radio';
 import { EquiposComponent } from './equipos/equipos.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
+import { JugadoresComponent } from './componentes/jugadores/jugadores.component';
 registerLocaleData(localefr, "fr");
 
 @NgModule({
@@ -34,7 +35,8 @@ registerLocaleData(localefr, "fr");
     CuerpoComponent,
     AceptarComponent,
     EquiposComponent,
-    InicioComponent
+    InicioComponent,
+    JugadoresComponent
   ],
   imports: [
     MatRadioModule,

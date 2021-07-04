@@ -7,7 +7,7 @@ var teamsController = {};
 teamsController.list = (req,res) => {
     console.log("Entre en los equipos");
     console.log(req.params);
-    Team.find({Liga: req.params.liga}).exec((err,teams) => {
+    Team.find({}).exec((err,teams) => {
         if(err) {
             console.log("Error:",err);
             return;
@@ -50,12 +50,12 @@ teamsController.update = (req, res) => {
 
 teamsController.create = function(req,res) {
     console.log("entre en create");
-    Team.find({}).sort({_id:-1}).limit(1).exec(function(err,nuevoArticulo){
+    Team.find({}).sort({_id:-1}).limit(1).exec(function(err,nuevoEquipo){
         
         if(err) {console.log('Error:',err);return;}
-        nuevoArticulo[0].NombreEquipo = nuevoArticulo[0].id = nuevoArticulo[0].LogoEquipo = nuevoArticulo[0].Liga = '' ;
+        nuevoEquipo[0].NombreEquipo = nuevoEquipo[0].id = nuevoEquipo[0].LogoEquipo = nuevoEquipo[0].Liga = '' ;
 
-        res.send(nuevoArticulo);
+        res.send(nuevoEquipo);
     });
 };
 

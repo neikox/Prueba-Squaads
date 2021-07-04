@@ -1,33 +1,30 @@
 <app-encabezado></app-encabezado>
 <div>
-    <h1>Listado de Equipos</h1>
+    <h1>Listado de Jugadores</h1>
     <button mat-stroked-button matTooltip="Click para Ingresar nuevo" class="iconbutton ingresar" color="warn" (click)="onRowClicked(0)">
       <mat-icon aria-hidden="false" aria-label="Nuevo Registro">library_add</mat-icon>
     </button>
     <div class="mat-elevation-z8 ">
       <table mat-table matSort [dataSource]="dataSource" class="tabla">          
-          <ng-container matColumnDef="NombreEquipo">
+          <ng-container matColumnDef="NombreJugador">
             <mat-header-cell *matHeaderCellDef mat-sort-header class="texto">Nombre</mat-header-cell>
-            <mat-cell *matCellDef="let team" class="texto">{{team.NombreEquipo}}</mat-cell>
+            <mat-cell *matCellDef="let player" class="texto">{{player.NombreJugador}}</mat-cell>
           </ng-container>
           
-          <ng-container matColumnDef="LogoEquipo">
+          <ng-container matColumnDef="Avatar">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Logo </mat-header-cell>
-            <img mat-card-image *matCellDef="let team" src="{{team.LogoEquipo}}">
+            <img mat-card-image *matCellDef="let player" src="{{player.Avatar}}">
           </ng-container>
 
           <ng-container matColumnDef="acciones">
             <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
-            <mat-cell *matCellDef="let team">
-              <button mat-stroked-button matTooltip="Click para Ver" class="iconbutton" color="warn" (click)="onRowClicked(team)">
-                <mat-icon aria-hidden="false" aria-label="Ver jugadores">visibility</mat-icon>
-              </button>
-              <button mat-stroked-button matTooltip="Click para Modificar" class="iconbutton" color="warn" (click)="onRowClicked(team)">
-                <mat-icon aria-hidden="false" aria-label="Modificar Registro">build</mat-icon>
-              </button>
-              <button mat-stroked-button matTooltip="Click para Delete" class="iconbutton" color="warn" (click)="openDialog(team)">
-                <mat-icon aria-hidden="false" aria-label="Eliminar Registro">delete</mat-icon>
-              </button>
+            <mat-cell *matCellDef="let player">
+                <button mat-stroked-button matTooltip="Click para Modificar" class="iconbutton" color="warn" (click)="onRowClicked(player)">
+                    <mat-icon aria-hidden="false" aria-label="Modificar Registro">build</mat-icon>
+                </button>
+                <button mat-stroked-button matTooltip="Click para Delete" class="iconbutton" color="warn" (click)="openDialog(player)">
+                    <mat-icon aria-hidden="false" aria-label="Eliminar Registro">delete</mat-icon>
+                </button>
             </mat-cell>
           </ng-container>
 

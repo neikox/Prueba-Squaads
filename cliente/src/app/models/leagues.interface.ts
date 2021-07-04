@@ -1,5 +1,5 @@
 export interface Liga {  
-  // _id: String,
+  _id: String,
   NombreLiga: String,
   Identificador: String,
   LogoLiga: String
