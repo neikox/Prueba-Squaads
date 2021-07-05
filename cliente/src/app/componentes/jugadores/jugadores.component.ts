@@ -15,6 +15,8 @@ import { MatDialog } from '@angular/material/dialog';
 export class JugadoresComponent implements OnInit {
 
   equipo: any
+  busqueda: any
+  accion:String = '';
 
   @ViewChild('paginator') set paginator(pager:MatPaginator) {
     if(pager) {
@@ -32,14 +34,23 @@ export class JugadoresComponent implements OnInit {
 
   constructor(private httpClient: HttpClient,private _Activatedroute:ActivatedRoute, private router: Router,private dialog: MatDialog) { 
     this.equipo = this._Activatedroute.snapshot.paramMap.get("id");
+    this.busqueda = this._Activatedroute.snapshot.paramMap.get("NombreJugador");
   }
 
   ngOnInit() {
-    this.httpClient.get('http://localhost:8060/players/'+this.equipo)
-    .subscribe((Jugadores: any) => {
+    if(this.busqueda == null) {
+      this.httpClient.get('http://localhost:8060/players/'+this.equipo)
+      .subscribe((Jugadores: any) => {
+        this.dataSource.data = Jugadores;
+        console.log("Resultado:",this.dataSource.data);
+      });
+    } else {
+      this.httpClient.get('http://localhost:8060/players/search/'+this.busqueda)
+      .subscribe((Jugadores: any) => {
       this.dataSource.data = Jugadores;
       console.log("Resultado:",this.dataSource.data);
     });
+    }
   }
 
   onRowClicked(row: any) {

@@ -12,7 +12,7 @@
 			<form id="grupo" [formGroup]="form" (ngSubmit)="search($event)">
 				<mat-form-field class="searchBar">
 					<mat-label>Search</mat-label>
-					<input type="text" placeholder="Busca a un jugador" matInput [readonly]="false" formControlName="NombreJugador" required>
+					<input type="text" placeholder="Busca a un jugador" matInput [readonly]="false" formControlName="NombreJugador">
 				</mat-form-field>
 				<button type="submit"><mat-icon aria-hidden="false" aria-label="Ver jugadores">search</mat-icon></button>
 			</form>

@@ -13,6 +13,7 @@ const routes: Routes = [
   {path: 'teams/:Identificador', component:EquiposComponent},
   {path: 'teams/ficha/:_id', component:FichaComponent},
   {path: 'players/:id', component:JugadoresComponent},
+  {path: 'players/search/:NombreJugador', component:JugadoresComponent},
   {path: 'players/ficha/:_id', component:FichaPlayersComponent},
 ];
 
