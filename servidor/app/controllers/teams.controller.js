@@ -17,7 +17,7 @@ teamsController.list = (req,res) => {
 }
 
 teamsController.show = (req,res) => {
-    Team.findOne({_id: req.params.id}).exec((err,teams) => {
+    Team.findOne({_id: req.params._id}).exec((err,teams) => {
         if(err) {
             console.log("Error:",err);
             return;
@@ -27,11 +27,7 @@ teamsController.show = (req,res) => {
 }
 
 teamsController.update = (req, res) => {
-    let factura = false;
-    if(req.body.importe != 0) {
-        factura = true;
-    }
-    Team.findByIdAndUpdate(req.params.id, {$set: {
+    Team.findByIdAndUpdate(req.params._id, {$set: {
         NombreEquipo: req.body.NombreEquipo,
         id: req.body.id,
         LogoEquipo: req.body.LogoEquipo,
@@ -61,14 +57,14 @@ teamsController.create = function(req,res) {
 
 teamsController.grabar = function(req,res) {
     console.log("entrando al grabar");
-    var tarea = new Team({
+    var team = new Team({
         _id: new mongoose.Types.ObjectId(),
         NombreEquipo: req.body.NombreEquipo,
         id: req.body.id,
         LogoEquipo: req.body.LogoEquipo,
         Liga: req.body.Liga
     });
-    tarea.save(function(err) {
+    team.save(function(err) {
         if (err){
             console.error(err);
             return;
@@ -77,7 +73,7 @@ teamsController.grabar = function(req,res) {
 };
 
 teamsController.delete = function(req,res) {
-    Team.findByIdAndDelete({_id: req.params.id})
+    Team.findByIdAndDelete({_id: req.params._id})
     .exec(function(err) {
         console.log(req.params.id);
         if (err) {console.log('Error: ',err);return;}

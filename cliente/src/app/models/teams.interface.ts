@@ -1,5 +1,5 @@
 export interface Team {  
-    _id: String,
+    _id: any,
     NombreEquipo: String,
     id: String,
     LogoEquipo: String,

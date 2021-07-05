@@ -25,6 +25,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { EquiposComponent } from './equipos/equipos.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { JugadoresComponent } from './componentes/jugadores/jugadores.component';
+import { FichaPlayersComponent } from './componentes/ficha-players/ficha-players.component';
 registerLocaleData(localefr, "fr");
 
 @NgModule({
@@ -36,7 +37,8 @@ registerLocaleData(localefr, "fr");
     AceptarComponent,
     EquiposComponent,
     InicioComponent,
-    JugadoresComponent
+    JugadoresComponent,
+    FichaPlayersComponent
   ],
   imports: [
     MatRadioModule,

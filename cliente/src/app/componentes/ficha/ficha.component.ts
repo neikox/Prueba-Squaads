@@ -8,6 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { MatDialog } from '@angular/material/dialog';
 import { AceptarComponent } from 'src/app/dialogo/aceptar/aceptar.component';
+import { MatTableDataSource } from '@angular/material/table';
+import { Team } from 'src/app/models/teams.interface';
 
 
 
@@ -19,15 +21,13 @@ import { AceptarComponent } from 'src/app/dialogo/aceptar/aceptar.component';
 })
 export class FichaComponent implements OnInit {
   form:FormGroup;
-  hidde:boolean= true;
-  //encargado de gestionar para que no tenga la img inyecciones de codigo
-  dataSource:any;
+  dataSource = new MatTableDataSource<Team>();
   _id: any;
   accion:String = '';
+  image: SafeUrl ='';
   
   constructor(private httpClient :HttpClient, private _Activatedroute:ActivatedRoute,private _formBuilder:FormBuilder, private sanitizer: DomSanitizer, private router:Router, public dialog: MatDialog) {
     console.log("Datos Recibidos");
-    console.log(_Activatedroute);
     this._id = this._Activatedroute.snapshot.paramMap.get("_id");
 
     console.log("Resultado del codigo: ", this._id);
@@ -40,13 +40,13 @@ export class FichaComponent implements OnInit {
       .subscribe((equipo:any) =>{
         this.accion = "Modificar";
         console.log("equipos de 0 :",equipo);
-        this.dataSource = equipo;
-        console.log("resultado:" , this.dataSource);
+        this.dataSource.data[0] = equipo;
+        console.log("resultado:" , this.dataSource.data[0]);
         //patchvalue mete todo lo del objeto seleccionado en el from group
         this.form.patchValue(equipo);
       });
     }else{
-      this.httpClient.get('http://localhost:8060/ficha/nueva').subscribe((equipo: any) => {
+      this.httpClient.get('http://localhost:8060/teams/ficha/nueva').subscribe((equipo: any) => {
         this.accion = "Nuevo";
         console.log("equipo vale:",equipo);
         this.dataSource = equipo[0];
@@ -75,19 +75,19 @@ export class FichaComponent implements OnInit {
       const value = this.form.value;
       console.log("contenido del form", this.form);
       if(this.accion == "Modificar"){
-        this.httpClient.post('http://localhost:8060/save/'+this._id, value).subscribe((mensaje:any) =>{
+        this.httpClient.post('http://localhost:8060/teams/save/'+this._id, value).subscribe((mensaje:any) =>{
         console.log("datos del formulario",mensaje);
         this.openDialog();
       });
       }else{
         console.log(value);
-        this.httpClient.post('http://localhost:8060/nueva', value).subscribe((mensaje:any) =>{
+        this.httpClient.post('http://localhost:8060/teams/nueva', value).subscribe((mensaje:any) =>{
           console.log('pasé por aqui');
           console.log("datos del formulario",mensaje);
           this.openDialog();
         });
       }
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/leagues');
     }else{
       this.form.markAllAsTouched();
     }
