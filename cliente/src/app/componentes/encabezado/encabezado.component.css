@@ -39,6 +39,11 @@ ul {
     li {
         font-size: 12px;
     }
+    .searchBar {
+        height: 6vh;
+        width: 15vh;
+        margin-bottom: 1vh;
+    }
 
     h2,p {
         display: none;

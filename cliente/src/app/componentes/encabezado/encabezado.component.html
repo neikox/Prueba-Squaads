@@ -1,22 +1,25 @@
 <header>
-	    <img id="logo-imagen" src="../../../assets/logos/Logoten.png" alt="Logo" id="logo" />
+	<img id="logo-imagen" src="../../../assets/logos/Logoten.png" alt="Logo" id="logo" />
+	<div>
 		<a id="logo-empresa" href="#">
 			<h1>Prueba Squaads</h1>
 			<h2>Kevin</h2>
 		</a> 
+		<form id="grupo" [formGroup]="form" (ngSubmit)="search($event)">
+			<mat-form-field class="searchBar">
+				<mat-label>Search</mat-label>
+				<input type="text" placeholder="Busca a un jugador" matInput [readonly]="false" formControlName="NombreJugador">
+			</mat-form-field>
+			<button type="submit"><mat-icon aria-hidden="false" aria-label="Ver jugadores">search</mat-icon></button>
+		</form>
+	</div>
 		<nav>
 			<ul>
 				<li><a routerLink="/">Inicio</a></li>
 				<li><a routerLink="/leagues">Ligas</a></li>
 			</ul>
-			<form id="grupo" [formGroup]="form" (ngSubmit)="search($event)">
-				<mat-form-field class="searchBar">
-					<mat-label>Search</mat-label>
-					<input type="text" placeholder="Busca a un jugador" matInput [readonly]="false" formControlName="NombreJugador">
-				</mat-form-field>
-				<button type="submit"><mat-icon aria-hidden="false" aria-label="Ver jugadores">search</mat-icon></button>
-			</form>
 		</nav>
+		
 </header>
 
 
