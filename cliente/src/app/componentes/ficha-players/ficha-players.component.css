@@ -1,0 +1,35 @@
+#formulario{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-top: 10%;
+    width: 50%;
+    margin-right: 20%;
+  }
+  #foto{
+    width: 50%;
+    margin-top: 10%;
+    margin-right: 15%;
+  }
+  #foto img{
+    width: 80%;
+    height: auto;
+  }
+  .contenedor{
+    display: flex;
+    justify-content: space-between;
+  }
+  @media screen and (max-width:600px) {
+    .contenedor{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 30%;
+    }
+    #foto{
+      width: 50%;
+      margin-top: 10%;
+      margin-right: 15%;
+      margin-left: 5%;
+    }
+  }

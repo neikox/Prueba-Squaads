@@ -17,7 +17,7 @@ playersController.list = (req,res) => {
 }
 
 playersController.show = (req,res) => {
-    Player.findOne({_id: req.params.id}).exec((err,teams) => {
+    Player.findOne({_id: req.params._id}).exec((err,teams) => {
         if(err) {
             console.log("Error:",err);
             return;
@@ -27,11 +27,7 @@ playersController.show = (req,res) => {
 }
 
 playersController.update = (req, res) => {
-    let factura = false;
-    if(req.body.importe != 0) {
-        factura = true;
-    }
-    Player.findByIdAndUpdate(req.params.id, {$set: {
+    Player.findByIdAndUpdate(req.params._id, {$set: {
         NombreJugador: req.body.NombreJugador,
         id: req.body.id,
         Avatar: req.body.Avatar,
@@ -63,7 +59,7 @@ playersController.grabar = function(req,res) {
     console.log("entrando al grabar");
     var player = new Player({
         _id: new mongoose.Types.ObjectId(),
-        NombreJugador: req.body.Nombrejugador,
+        NombreJugador: req.body.NombreJugador,
         id: req.body.id,
         Avatar: req.body.Avatar,
         teamId: req.body.teamId
@@ -77,7 +73,7 @@ playersController.grabar = function(req,res) {
 };
 
 playersController.delete = function(req,res) {
-    Player.findByIdAndDelete({_id: req.params.id})
+    Player.findByIdAndDelete({_id: req.params._id})
     .exec(function(err) {
         console.log(req.params.id);
         if (err) {console.log('Error: ',err);return;}

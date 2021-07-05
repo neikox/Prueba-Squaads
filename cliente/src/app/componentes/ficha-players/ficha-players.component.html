@@ -1,1 +1,34 @@
-<p>ficha-players works!</p>
+<app-encabezado></app-encabezado>
+<form id="grupo" [formGroup]="form" (ngSubmit)="guardar($event)">
+  <div class="contenedor">
+    <div id="formulario">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre del Jugador:</mat-label>
+        <input type="text" matInput [readonly]="false" placeholder="" formControlName="NombreJugador" required>
+        <mat-error *ngIf="form.get('NombreJugador')?.errors?.required">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>ID:</mat-label>
+        <input type="text" matInput [readonly]="false" placeholder="a249ed6a-ad8e-4692-9758-5d19454752f3" formControlName="id" required>
+        <mat-error *ngIf="form.get('id')?.errors?.required">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Avatar:</mat-label>
+        <input type="url" matInput [readonly]="false" placeholder="https://robohash.org/autemvoluptatemdolorem.png?size=250x250&set=set1" formControlName="Avatar" required>
+        <mat-error *ngIf="form.get('Avatar')?.errors?.required">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Identificador del equipo:</mat-label>
+        <input type="text" matInput [readonly]="false" placeholder="8154f4cb-246b-4bf9-bc64-51f8661b6781" formControlName="teamId" required>
+        <mat-error *ngIf="form.get('teamId')?.errors?.required">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      
+      <div id="botones">
+        <button type="reset">Cancelar</button>
+        <button type="submit">Guardar</button>
+      </div>
+    </div>
+  </div>
+  
+
+</form>

@@ -53,9 +53,6 @@ export class EquiposComponent implements OnInit {
 
   modifyTeam(row: any) {
     console.log('Row clicked: ',row);
-    // this.httpClient.get('http://localhost:8060/teams/ficha/'+row._id).subscribe((articulo: any) => {
-    //     console.log("llego a ficha");
-    // });
     if (row != 0){
       this.router.navigateByUrl('/teams/ficha/'+row._id)
     } else {
@@ -65,8 +62,8 @@ export class EquiposComponent implements OnInit {
 
   openDialog(dato: any){
     console.log(dato);
-    this.httpClient.get('http://localhost:8060/teams/borrar/'+dato._id).subscribe((articulo: any) => {
-        console.log("dale ahi");
+    this.httpClient.get('http://localhost:8060/teams/borrar/'+dato._id).subscribe((x: any) => {
+        console.log("dale ahi", x);
     });
     window.location.reload();
   }

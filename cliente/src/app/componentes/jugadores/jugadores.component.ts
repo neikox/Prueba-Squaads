@@ -43,13 +43,16 @@ export class JugadoresComponent implements OnInit {
   }
 
   onRowClicked(row: any) {
-    console.log('Row clicked: ',row);
-      this.router.navigateByUrl('/players/'+row.id);
+    if (row != 0){
+      this.router.navigateByUrl('/players/ficha/'+row._id)
+    } else {
+      this.router.navigateByUrl('/players/ficha/0')
+    }
   }
 
   openDialog(dato: any){
-    this.httpClient.get('http://localhost:8060/borrar/'+dato._id).subscribe((articulo: any) => {
-        console.log("dale ahi");
+    this.httpClient.get('http://localhost:8060/players/borrar/'+dato._id).subscribe((x: any) => {
+        console.log("dale ahi", x);
     });
     window.location.reload();
   }
