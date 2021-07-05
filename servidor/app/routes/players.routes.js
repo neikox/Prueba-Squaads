@@ -12,6 +12,8 @@ router.get("/ficha/:_id", players.show);
 
 router.post("/save/:_id", players.update);
 
+router.post("/search/:NombreJugador", players.search);
+
 router.get("/borrar/:_id", players.delete);
 
 module.exports = router;

@@ -26,6 +26,16 @@ playersController.show = (req,res) => {
     })
 }
 
+playersController.search = (req,res) => {
+    Player.find({NombreJugador: req.params.NombreJugador}).exec((err,teams) => {
+        if(err) {
+            console.log("Error:",err);
+            return;
+        }
+        res.send(teams);
+    })
+}
+
 playersController.update = (req, res) => {
     Player.findByIdAndUpdate(req.params._id, {$set: {
         NombreJugador: req.body.NombreJugador,

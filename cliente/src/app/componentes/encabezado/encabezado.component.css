@@ -30,6 +30,11 @@ ul {
     font-size: 16px;
 }
 
+.searchBar {
+    background-color: white;
+    height: 4vh;
+}
+
 @media (max-width: 900px) {
     li {
         font-size: 12px;
